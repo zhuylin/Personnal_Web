@@ -1,0 +1,387 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>近期动向</title>
+    <link rel="short icon" href="image/icon/动向.png">
+    <style>
+        * {font-family:STKaiti;}
+        body {
+            background-image:url('image/吉他.jpg');
+            height:1000px;
+            background-attachment:fixed;
+            background-size:cover;
+            margin:auto;border:auto;padding:auto;
+        }
+
+        #center {
+            position:fixed;
+            border: dashed 1px;
+            border-color: red brown purple green;
+            height:250px;
+            width:385px;
+            right:178px;
+            top:200px;
+        }
+
+        #left {
+            position:fixed;
+            height:300px;
+            width:200px;
+            right:350px;
+            top:270px;
+        }
+
+        #lefta {
+            position:fixed;
+            background-color:red;
+            height:125px;
+            width:178px;
+            right:565px;
+            top:75px;
+            display:none;
+        }
+
+        #leftb {
+            position:fixed;
+            background-color:brown;
+            height:125px;
+            width:178px;
+            right:565px;
+            top:200px;
+            display:none;
+        }
+
+        #leftc {
+            position:fixed;
+            background-color:purple;
+            height:125px;
+            width:178px;
+            right:565px;
+            top:325px;
+            display:none;
+        }
+
+        #leftd {
+            position:fixed;
+            background-color:green;
+            height:125px;
+            width:178px;
+            right:565px;
+            top:450px;
+            display:none;
+        }
+
+        #righta {
+            position:fixed;
+            background-color:red;
+            height:125px;
+            width:178px;
+            right:0px;
+            top:75px;
+            display:none;
+        }
+
+        #rightb {
+            position:fixed;
+            background-color:brown;
+            height:125px;
+            width:178px;
+            right:0px;
+            top:200px;
+            display:none;
+        }
+
+        #rightc {
+            position:fixed;
+            background-color:purple;
+            height:125px;
+            width:178px;
+            right:0px;
+            top:325px;
+            display:none;
+        }
+
+        #rightd {
+            position:fixed;
+            background-color:green;
+            height:125px;
+            width:178px;
+            right:0px;
+            top:450px;
+            display:none;
+        }
+
+        #td {
+            position:fixed;
+            height:125px;
+            width:150px;
+            right:300px;
+            top:75px;
+            
+        }
+
+        #right {
+            position:fixed;
+            height:300px;
+            width:200px;
+            right:150px;
+            top:270px;
+        }
+
+        #speaking {
+            background-color:red;
+            position:fixed;
+            height:100px;
+            width:200px;
+            right:100px;
+            top:50px;
+            display: none;
+        }
+
+        a {
+            color:black;
+            text-decoration:none;
+
+        }
+
+        a:hover {text-decoration:underline; }
+
+        #a, #a1, #a2, #a1a, #a2a{
+            color:red;
+        }
+        #b, #b1, #b2, #b1b, #b2b {
+            color:brown;
+        }
+        #c, #c1, #c2, #c1c, #c2c {
+            color:purple;
+        }
+        #d, #d1, #d2, #d1d, #d2d {
+            color:green;
+        }
+
+        h1 {text-align: center;}
+
+        #hard_static {display:none;}
+
+        #speaking {text-align: center; background-color:orange;}
+
+        #left_day {font-size: 20px; color:red;}
+
+        #back {
+            position:fixed;
+            top:0;
+            right:20px;
+        }
+
+        #back a {
+            font-size:20px;
+            color:black;
+            text-decoration:none;
+        }
+
+        #back a:hover {text-decoration:underline; color:red;}
+    </style>
+</head>
+
+<body>
+    <div id="speaking">
+        <p>剩余天数：</p>
+        <p id="left_day"></p>
+    </div>
+    <div id="td" onmouseover="static()" onmouseout="dynamic()">
+        <img src="image/努力学习.gif" id="hard">
+        <img src="image/努力学习静态.png" id="hard_static">
+    </div>
+    <div id="lefta">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 一节</li><br>
+            <li>DDL: 5月初</li><br>
+        </ul>
+    </div>
+    <div id="leftb">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 任意</li><br>
+            <li>DDL: 4月20日</li><br>
+        </ul>
+    </div>
+    <div id="leftc">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 一节</li><br>
+            <li>DDL: 5月10日</li><br>
+        </ul>
+    </div>
+    <div id="leftd">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 任意</li><br>
+            <li>DDL: 7月底</li><br>
+        </ul>
+    </div>
+    <div id="center">
+        <h1 id="todo"><span id="a">T</span><span id="b">O</span> <span id="c">D</span><span id="d">O</span></h1>
+        <div id="left">
+            <ul>
+                <li id="a1"><a href="https://www.bilibili.com/video/av36895433?from=search&seid=17974908005129001947" id="a1a" onmouseout="hide1()" onmouseover="display1()">数据结构</a></li><br>
+                <li id="b1"><a id="b1b" onmouseout="hide2()" onmouseover="display2()" href="https://www.bilibili.com/video/av36567462?from=search&seid=12359378103303537098">计算计网络记忆</a></li><br>
+                <li id="c1"><a id="c1c" onmouseout="hide3()" onmouseover="display3()">史纲</a></li><br>
+                <li id="d1"><a id="d1d" onmouseout="hide4()" onmouseover="display4()">单词记忆</a></li><br>
+            </ul>
+        </div>
+        <div id="right">
+            <ul>
+                <li id="a2"><a id="a2a" onmouseout="hide5()" onmouseover="display5()" href="资料.html">概率论</a></a></li><br>
+                <!--<li id="b2"><a id="b2b" onmouseout="hide1()" onmouseover="display1()"></a></li><br>-->
+                <!--<li id="c2"><a id="c2c" onmouseout="hide1()" onmouseover="display1()"></a></li><br>-->
+                <!--<li id="d2"><a id="d2d" onmouseout="hide1()" onmouseover="display1()"></a></li><br>-->
+            </ul>
+        </div>
+    </div>
+    <div id="righta">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 一节</li><br>
+            <li>DDL: 5月初</li><br>
+        </ul>
+    </div>
+    <div id="rightb">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 一节</li><br>
+            <li>DDL: 5月初</li><br>
+        </ul>
+    </div>
+    <div id="rightc">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 一节</li><br>
+            <li>DDL: 5月初</li><br>
+        </ul>
+    </div>
+    <div id="rightd">
+        <ul>
+            <li>完成度: 1%</li><br>
+            <li>每天学习量: 一节</li><br>
+            <li>DDL: 5月初</li><br>
+        </ul>
+    </div>
+
+    <div id="back"> <p><a href="Index.html">>>回到主页</a></p> </div>
+
+</body>
+
+</html>
+<script>
+    function display1() {
+        var adisplay = document.getElementById("lefta");
+        adisplay.style.display="block";
+    }
+
+    function hide1() {
+        var adisplay = document.getElementById("lefta");
+        adisplay.style.display="none";
+    }
+b
+    function display2() {
+        var adisplay = document.getElementById("leftb");
+        adisplay.style.display="block";
+    }
+
+    function hide2() {
+        var adisplay = document.getElementById("leftb");
+        adisplay.style.display="none";
+    }
+
+    function display3() {
+        var adisplay = document.getElementById("leftc");
+        adisplay.style.display="block";
+    }
+
+    function hide3() {
+        var adisplay = document.getElementById("leftc");
+        adisplay.style.display="none";
+    }
+
+    function display4() {
+        var adisplay = document.getElementById("leftd");
+        adisplay.style.display="block";
+    }
+
+    function hide4() {
+        var adisplay = document.getElementById("leftd");
+        adisplay.style.display="none";
+    }
+
+    function display5() {
+        var adisplay = document.getElementById("righta");
+        adisplay.style.display="block";
+    }
+
+    function hide5() {
+        var adisplay = document.getElementById("righta");
+        adisplay.style.display="none";
+    }
+
+    function display6() {
+        var adisplay = document.getElementById("rightb");
+        adisplay.style.display="block";
+    }
+
+    function hide6() {
+        var adisplay = document.getElementById("rightb");
+        adisplay.style.display="none";
+    }
+
+    function display7() {
+        var adisplay = document.getElementById("rightc");
+        adisplay.style.display="block";
+    }
+
+    function hide7() {
+        var adisplay = document.getElementById("rightc");
+        adisplay.style.display="none";
+    }
+
+    function display8() {
+        var adisplay = document.getElementById("rightd");
+        adisplay.style.display="block";
+    }
+
+    function hide8() {
+        var adisplay = document.getElementById("rightd");
+        adisplay.style.display="none";
+    }
+
+    function static() {
+        var adisplay = document.getElementById("hard_static");
+        adisplay.style.display="block";
+        adisplay = document.getElementById("hard");
+        adisplay.style.display="none";
+        adisplay = document.getElementById("speaking");
+        adisplay.style.display="block";
+        date_left();
+
+    }
+
+
+    function dynamic() {
+        var adisplay = document.getElementById("hard");
+        adisplay.style.display="block";
+        adisplay = document.getElementById("hard_static");
+        adisplay.style.display="none";
+        adisplay = document.getElementById("speaking");
+        adisplay.style.display="none";
+    }
+
+    function date_left() {
+         var ddl = new Date(2019,12,22,0,0,0);
+         var today = new Date();
+         var days = ddl.getTime() - today.getTime();
+         var left = parseInt(days / (1000 * 60 * 60 * 24));
+         document.getElementById("left_day").innerHTML = left;
+    }
+
+</script>

@@ -1,0 +1,155 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>朱泳霖的世界</title>
+    <link rel="short icon" href="image/留言.png">
+    <style type="text/css">
+        body {
+            background-image:url('image/吉他.jpg');
+            height:1000px;
+            background-attachment:fixed;
+            background-size:cover;
+        }
+
+        *{font-size:20px;font-family:STKaiti}
+
+        #calc {bottom:0px; right:0px; position: fixed;}
+
+        #f {
+            position: absolute;
+            left: 700px;
+            top: 60px;
+            width: 670px;
+            height: auto;
+        }
+
+        #box {
+            position: absolute;
+            left: 720px;
+            top: 425px;
+            width: 640px;
+            height: auto;       
+        }
+
+        fieldset {
+            position:absolute; 
+            width:500px; 
+            padding:20px; 
+            padding-top: 25px;
+            margin:20px;
+        }
+
+        #content {
+            width:300px;
+            height:100px;
+            vertical-align:top;
+        }
+
+        input:focus {background-color:yellow;}
+
+        #name {width:300px;}
+
+        textarea::selection {
+            color:white; 
+            background-color:red
+        }
+
+        #back {
+          position: absolute;
+          top:0px;
+          height: 40px;
+          width: 120px;
+          right: 0px;
+          font-size: 20px;        
+        }
+
+        #back a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #back:hover a {
+            color: red;
+            text-decoration: underline;
+        }
+
+        span {
+            font-size: 10px;
+            vertical-align: top;
+        }
+
+        span:hover {
+            cursor:pointer;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p><b>留言区</b></p><hr>     
+    </div>
+    <div id="back"> <p><a href="Index.html">>>回到主页</a></p> </div>
+    <div id="f">
+        <form>
+            <fieldset>
+                <legend><b>联系留言</b></legend>
+                昵称：<input type="text" id="name"><br><br>
+                留言：<textarea id="msg" rows="6" cols="30"></textarea><br><br>
+                <input type="button" id="btn" value="留言">
+                <input name="reset" type="reset" value="重置">
+            </fieldset>
+        </form>
+    </div>
+    <button id = "calc" onclick = calc()>统计留言数</button>   
+</body>
+</body>
+
+<script type="text/javascript">
+    var box = document.getElementById("box");
+        var ul = document.createElement("ul");
+        box.appendChild(ul);
+        var btn = document.getElementById("btn");
+        var msg = document.getElementById("msg");
+        var n = 0;
+        btn.onclick = function(){
+            var name = document.getElementById("name");
+            if(name.value === ""){
+                alert("请输入昵称")
+            } else {
+            if(msg.value === ""){
+                alert("请输入留言内容")
+            } else{
+                n++;
+                var li = document.createElement("li");
+                li.innerHTML = msg.value + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0  " + "From：" + name.value +"<span> Ⓧ</span>";
+                var lis = document.getElementsByTagName("li");
+                if(n === 1){
+                    //如果是第一条留言则用appendChild
+                     ul.appendChild(li);
+                }else{
+                    ul.insertBefore(li,lis[0]);
+                   //最新的留言总在第一条显示
+                }
+                //重置消息
+                msg.value = "";
+                name.value = "";
+                alert("感谢您的留言!")
+                //重置文本框
+                var span = document.getElementsByTagName("span");
+                for(var i = 0;i<span.length;i++){
+                    span[i].onclick = function(){
+                        ul.removeChild(this.parentNode);
+                        n--;
+                    }
+                }
+                }
+            }
+        };
+        function calc(){
+            alert("一共有"+n+"条留言")
+        }
+</script>
+
+</html>

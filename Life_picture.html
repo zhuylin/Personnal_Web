@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>生活照</title>
+    <link rel="short icon" href="image/icon/照片.png">
+</head>
+<style>
+    * {font-family:STKaiti}
+    body {
+        background-image:url('image/吉他.jpg');
+        height:1000px;
+        background-attachment:fixed;
+        background-size:cover;
+        margin:auto;border:auto;padding:auto;
+    }
+
+    #back {
+        position: absolute;
+        top:20px;
+        right: 0px;
+        height: 100px;
+        width: 120px;
+    }
+
+    #back a {color:black; text-decoration:none; font-size:20px;}
+    #back a:hover {color:red; text-decoration:underline; font-size:20px;}
+
+    #photos {position:absolute; top:100px;}
+
+    .top{
+        /* 设置宽度高度背景颜色 */
+        height: auto; /*高度改为自动高度*/
+        width:100%;
+        margin-left: 0;
+        background:rgba(189, 181, 181, 0.5);
+        position: absolute; /*固定在顶部*/
+        top: 20px;/*离顶部的距离为0*/
+        margin-bottom: 5px;
+     }
+    .top ul{
+        /* 清除ul标签的默认样式 */
+        width: auto;/*宽度也改为自动*/
+        list-style-type: none;
+        white-space:nowrap;
+        overflow: hidden;
+        margin-left: 5%;
+        /* margin-top: 0;          */
+        padding: 0;
+    }
+
+    .top li {
+        float:left; /* 使li内容横向浮动，即横向排列  */
+        margin-right:8%;  /* 两个li之间的距离*/
+        position: relative;
+        overflow: hidden;
+    }
+
+    .top li a{
+       /* 设置链接内容显示的格式*/
+        display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+        color:black;
+        text-align: center;
+        padding: 3px;
+        overflow: hidden;
+        text-decoration: none; /* 去除下划线 */
+        font-size:20px;
+    }
+    .top li a:hover{
+        text-decoration: underline;
+        font-size:25px;
+    }
+
+</style>
+
+<script>
+    function hideall() {
+        var ahide = document.getElementById("room");
+        ahide.style.display="none";
+        ahide = document.getElementById("guitar");
+        ahide.style.display="none";
+        ahide = document.getElementById("badminton");
+        ahide.style.display="none";
+        ahide = document.getElementById("life");
+        ahide.style.display="none";
+        ahide = document.getElementById("self");
+        ahide.style.display="none";
+        ahide = document.getElementById("others");
+        ahide.style.display="none";
+        var acolor = document.getElementById("a1");
+        acolor.style.color="black";
+        acolor = document.getElementById("b1");
+        acolor.style.color="black";
+        acolor = document.getElementById("c1");
+        acolor.style.color="black";
+        acolor = document.getElementById("d1");
+        acolor.style.color="black";
+        acolor = document.getElementById("e1");
+        acolor.style.color="black";
+        acolor = document.getElementById("g1");
+        acolor.style.color="black";
+    }
+
+    function display1() {
+        hideall();
+        var adisplay = document.getElementById("room");
+        adisplay.style.display="block";
+        var acolor = document.getElementById("a1");
+        acolor.style.color="red";
+    }
+
+    function display2() {
+        hideall();
+        var adisplay = document.getElementById("guitar");
+        adisplay.style.display="block";
+        var acolor = document.getElementById("b1");
+        acolor.style.color="red";
+    }
+
+    function display3() {
+        hideall();
+        var adisplay = document.getElementById("badminton");
+        adisplay.style.display="block";
+        var acolor = document.getElementById("c1");
+        acolor.style.color="red";
+    }
+
+    function display4() {
+        hideall();
+        var adisplay = document.getElementById("life");
+        adisplay.style.display="block";
+        var acolor = document.getElementById("d1");
+        acolor.style.color="red";
+    }
+
+    function display5() {
+        hideall();
+        var adisplay = document.getElementById("self");
+        adisplay.style.display="block";
+        var acolor = document.getElementById("e1");
+        acolor.style.color="red";
+    }
+
+    function display6() {
+        hideall();
+        var adisplay = document.getElementById("others");
+        adisplay.style.display="block";
+        var acolor = document.getElementById("g1");
+        acolor.style.color="red";
+    }
+
+    var flag=1;
+    function imagechange(obj){ 
+        if(flag==1) {
+            obj.height=obj.height*2.5;
+            flag=0;
+            var imgs = document.getElementsByTagName("img");
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].style.display="none"; 
+            }
+            obj.style.display="inline-block";
+            var temp = document.getElementsByTagName("li");
+            //防止放大后不缩小而选择其他导航栏导致图片消失
+            for (var i = 0; i < temp.length; i++) {
+                temp[i].style.display="none"; 
+            }
+            var adisplay = document.getElementById("tip");
+            adisplay.style.display="block";
+        }
+
+        else {
+            obj.height=obj.height/2.5;
+            flag=1;
+            var imgs = document.getElementsByTagName("img");
+                for (var i = 0; i < imgs.length; i++) {
+                imgs[i].style.display="inline-block"; 
+            }
+            var temp = document.getElementsByTagName("li");
+            for (var i = 0; i < temp.length; i++) {
+                temp[i].style.display="inline-block"; 
+            }
+            var adisplay = document.getElementById("tip");
+            adisplay.style.display="none";
+        }
+    }
+</script>
+
+<body onload="display1()">
+    <div class="top">
+        <p id="tip" style="display: none; text-align: center;">Tip: 双击缩小图片</p>
+        <center>
+            <ul>
+                <li><a href="#" onclick="display1()" id="a1">宿舍</a></li>
+                <li><a href="#" onclick="display2()" id="b1">吉他</a></li>
+                <li><a href="#" onclick="display3()" id="c1">羽毛球</a></li>
+                <li><a href="#" onclick="display4()" id="d1">生活</a></li>
+                <li><a href="#" onclick="display5()" id="e1">自拍</a></li>
+                <li><a href="#" onclick="display6()" id="g1">其他</a></li>
+            </ul>
+        </center>
+    </div>
+    <div id="back"> <p><a href="Index.html">>>回到主页</a></p> </div>
+    <div id="photos">
+        <div id="room">
+            <img src="image/life_pic/剪发.jpeg" alt="剪发" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/体育角.jpeg" alt="体育角" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/舍规.jpeg" alt="舍规" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/我的桌面.jpeg" alt="我的桌面" height="350px" width="auto" ondblclick="imagechange(this)">
+        </div>
+        <div id="guitar">
+            <img src="image/life_pic/押尾.jpeg" alt="押尾" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/吉他照.jpeg" alt="吉他照" height="350px" width="auto" ondblclick="imagechange(this)">
+        </div>
+        <div id="badminton">
+            <img src="image/life_pic/羽毛球.jpeg" alt="羽毛球" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/羽毛球2.png" alt="羽毛球2" height="350px" width="auto" ondblclick="imagechange(this)">
+        </div>
+        <div id="life">
+            <img src="image/life_pic/唱K.jpeg" alt="唱K" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/耳机.jpeg" alt="耳机" height="350px" width="auto" ondblclick="imagechange(this)">
+        </div>
+        <div id="self">
+            <img src="image/life_pic/家乡.jpg" alt="家乡" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/自拍2.jpeg" alt="自拍2" height="350px" width="auto" ondblclick="imagechange(this)">
+        </div>
+        <div id="others">
+            <img src="image/life_pic/韩式牛肉铁板.jpeg" alt="韩式牛肉铁板" height="350px" width="auto" ondblclick="imagechange(this)">
+            <img src="image/life_pic/白夜行.jpeg" alt="白夜行" height="350px" width="auto" ondblclick="imagechange(this)">
+        </div>
+    </div>
+</body>
+</html>
