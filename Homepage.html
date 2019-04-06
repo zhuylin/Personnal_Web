@@ -1,0 +1,164 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>朱泳霖的世界</title>
+    <link rel="short icon" href="image/血小板.png">
+    <style>
+        body {
+            background-image:url('image/吉他.jpg');
+            height:1000px;
+            background-attachment:fixed;
+            background-size:cover;
+            margin:auto;border:auto;padding:auto;
+        }
+
+        #welcome {
+            position:absolute;
+            right:50px;
+            height:120px;
+            width:600px;
+            transition:font-size 2s;
+        }
+
+        #link {
+            top:150px;
+            right:70px;
+            position:absolute;
+            height:300px;
+            width:600px;
+
+        }
+
+        h1 {
+            font-family:STKaiti;
+            font-size:50px;
+            font-weight:bold;
+            font-style:italic;
+            text-shadow: -4px 5px 15px black;
+        }
+
+        p {
+            font-family:STKaiti;
+            font-size:20px;
+            text-align:center;
+            color:black;
+        }
+
+        a {
+            font-family:STKaiti;
+            color:black;
+            font-size:20px;
+            text-decoration:none;
+            line-height:30px;
+        }
+
+        #animate {
+            position:absolute;
+            height:50px;
+            width:50px;
+            right:650px;
+            top:30px;
+            animation: myfirst 10s infinite alternate;
+            display:none;
+        }
+
+        @keyframes myfirst {
+            0%   {right:650px; top:30px;}
+            30%  {right:50px; top:30px;}
+            50%  {right:50px; top:400px;}
+            80%  {right:650px; top:400px;}
+            100% {right:650px; top:30px;}
+        }
+
+        a:link {color:black;}
+        a:visited {color:black;}
+        a:active {color:brown}
+        a:hover {font-size:25px; color:red;}
+
+        span:hover {
+            font-size:80px;
+        }
+
+        .thumbs_content{
+            right:0px;
+            top:0px;
+        }
+
+        .thumbs_button {
+            float: left;
+            width:145px;
+            text-align: center;
+            margin:5px auto;
+            height: 45px;
+            line-height: 45px;
+            background-color:#444;
+            color:#fbfbfb;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:16px;
+            transition: all 0.3s;
+            border-radius: 0 0 25px 0;
+        }
+
+        .thumbs_button:hover {
+            background-color:#cd4450;
+            color:#fbfbfb;
+            opacity:0.8;
+            font-size:18px;
+        }
+
+        .clear{
+            clear:both;
+        }
+</style>
+
+    <script>
+    function bgm() {
+        let bgm = document.getElementById('bgm')
+        bgm.play = play;
+        bgm.controls = controls;
+    }
+
+    function welcome() {
+        window.alert("欢迎进入朱泳霖的世界");
+    }
+
+    function acting() {
+        adisplay = document.getElementById("animate");
+        adisplay.style.display="block";
+    }
+
+    function stopping() {
+        adisplay = document.getElementById("animate");
+        adisplay.style.display="none";
+    }
+    </script>
+</head>
+
+<body>
+
+    <div id="top">
+        <div id="bgm_play">
+            <audio id="bgm" src="music/时间旅行.mp3" controls preload="auto" autoplay loop="loop">该浏览器不支持audio播放</audio>
+        </div>
+        <div id="welcome">
+            <h1>欢迎进入<span>朱泳霖</span>的世界</h1>
+        </div>
+        <div id="link" onmouseover="acting()" onmouseout="stopping()">
+            <p><a href="Resume2.html" target="_blank"><img src="image/icon/头像.png" width="20px" height="20px">个人简介</a></p>
+            <p><a href="Growth_process.html" target="_blank"><img src="image/icon/成长.png" width="20px" height="20px">成长历程</a></p>
+            <p><a href="To_do.html" target="_blank"><img src="image/icon/动向.png" width="20px" height="20px">近期动向</a></p>
+            <p><a href="Life_picture.html" target="_blank"><img src="image/icon/照片.png" width="20px" height="20px">生活照片</a></p>
+            <p><a href="Connect.html" target="_blank"><img src="image/icon/留言.png" width="20px" height="20px">联系留言</a></p>
+        </div>
+        </div>
+        <div class="thumbs_content">
+            <a href="javascript:void(0)" class="thumbs_button fa fa-thumbs-up" title="点赞，支持一下"><img src="image/icon/点赞.png" width="20px" height="20px">点赞</a>
+            <span class="clear"></span></div>
+        <div id="animate">
+            <img src="image/icon/皮卡丘.png" width="35px" height="35px">
+        </div>
+    </div>
+</body>
+</html>
