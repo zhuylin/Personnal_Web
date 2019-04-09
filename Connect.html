@@ -167,13 +167,11 @@
             }
         };*/
 
-    var count = 0;
-             
+
     function delete1(id)
     {
         localStorage.removeItem(id);
         this.Storage.writeData();
-        count --;
     }
              
     var Storage =
@@ -217,11 +215,10 @@
             {
                 data = localStorage.getItem(localStorage.key(i)).split("|");
 
-                count ++;
                      
                 dataHtml += "<div style=\"border:solid 1px white; padding:20px; padding-bottom:0; border-radius:10px; margin-bottom:20px;\">" + "<span style=>" + 
                     "<span style=\"text-style:bold; font-size:25px;\">" + data[1] + "</span>" + 
-                    "<span style=\"color:grey; font-size:15px;\">" + "&nbsp&nbsp&nbsp第" + count + "楼" + "</span>" +
+                    //"<span style=\"color:grey; font-size:15px;\">" + "&nbsp&nbsp&nbsp第" + count + "楼" + "</span>" +
                     "<span style=\"float:right; font-size:15px;\">" + data[2] + "</span><p><span class=\"msg\">" 
                     + data[0] + 
                     "<input style=\"float:right;border:none;border-radius:5px;\" id=\"clearBt\" type=\"button\" onclick=\"delete1(" + localStorage.key(i) + ");\" value=\"删除\"/>" + 
