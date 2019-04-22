@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成长历程</title>
+    <link rel="short icon" href="image/icon/成长.png">
+</head>
+
+<style>
+    * {font-family: STKaiti}
+
+    #head {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 200px; 
+        background-color: rgba(189, 181, 181, 0.5);   
+    }
+
+    #back {
+          position: absolute;
+          top:0px;
+          height: 40px;
+          width: 120px;
+          right: 0px;
+          font-size: 20px;        
+    }
+
+    #back a {
+        color: black;
+        text-decoration: none;
+    }
+
+    #back:hover a {
+        color: red;
+        text-decoration: underline;
+    }
+
+    #main {
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        height: 3000px;
+    }
+
+    #time_shaft {
+        border-radius: 50px;
+        position: absolute;
+        left: 700px;
+        top: 160px;
+        width: 20px;
+        height: 1000px;
+        background-color: #BFEFFF;
+
+    }
+
+    #a1c {
+        position: absolute;
+        left: 675px;
+        top: 200px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #BFEFFF;
+        border: solid 5px white;
+    }
+
+    #a1 {
+        border-radius: 30px;
+        position: absolute;
+        left: 750px;
+        top: 260px;
+        height: 50px;
+        width: 400px;
+        background-color: #BFEFFF;
+    }
+
+    #a1h {
+        position: absolute;
+        left: 760px;
+        top: 200px;
+        width: 200px;
+        height: 50px;
+    }
+
+    #b1c {
+        position: absolute;
+        left: 675px;
+        top: 500px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #BFEFFF;
+        border: solid 5px white;
+    }
+
+    #b1 {
+        border-radius: 30px;
+        position: absolute;
+        left: 270px;
+        top: 560px;
+        height: 50px;
+        width: 400px;
+        background-color: #BFEFFF;
+    }
+
+    #b1h {
+        position: absolute;
+        left: 540px;
+        top: 500px;
+        width: 100px;
+        height: 50px;
+    }
+
+    #c1c {
+        position: absolute;
+        left: 675px;
+        top: 800px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #BFEFFF;
+        border: solid 5px white;
+    }
+
+    #c1 {
+        border-radius: 30px;
+        position: absolute;
+        left: 750px;
+        top: 860px;
+        height: 50px;
+        width: 400px;
+        background-color: #BFEFFF;
+    }
+
+    #c1h {
+        position: absolute;
+        left: 760px;
+        top: 800px;
+        width: 200px;
+        height: 50px;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+        text-indent: 2em;
+        display: none;
+    }
+
+    #change {
+        color: red;
+    }
+
+</style>
+
+<body>
+    <div id="head">
+        <h1 style="text-align: center; font-size: 60px; text-shadow: 3px 3px 3px rgba(0, 0, 0.5)"><i>成长历程</i></h1>
+        <h2 id="back"><a href="Index.html">>>回到主页</a></h2> 
+        
+      
+ 
+    </div>
+    
+    
+    <div id="main">
+        <div id="time_shaft">
+        </div>
+
+        <div class="search" style="position: absolute; top:90px; width: 100%; text-align: center;">
+            查找：
+            <input id="texta" type="text" style="width: 180px; height: 20px; font-size: 15px;" placeholder="关键词">
+            <input type="button" value="查找" id ="btn" onclick="search()">
+        </div>
+
+        <div id="parta">
+            <div id="a1c" onmouseover="show(circle1)" onmouseout="hide(circle1)">
+                <div style="position: absolute; top:10px; left: 10px; width: 30px; height: 30px; background-color: #BFEFFF;border-radius: 10px; border: solid 5px white;">
+                    <div style="position: absolute; background-color: white; width: 15px; height: 15px; border-radius: 50%; top: 7.5px; left: 7.5px; display: none;" id="circle1" ondblclick="text(circle1, a1, p1)" class="circle">
+                    </div>
+                </div>
+            </div>
+            <div id="a1h">
+                <h2 class="con">2019/02/08</h2>
+            </div>
+            <div id="a1">
+                <h3 class="con">201911</h3>
+                <p id="p1" class="con2">2019*</p>
+            </div>
+        </div>
+
+        <div id="partb">
+            <div id="b1c" onmouseover="show(circle2)" onmouseout="hide(circle2)">
+                <div style="position: absolute; top:10px; left: 10px; width: 30px; height: 30px; background-color: #BFEFFF; border-radius: 10px; border: solid 5px white;">
+                    <div style="position: absolute; background-color: white; width: 15px; height: 15px; border-radius: 50%; top: 7.5px; left: 7.5px; display: none;" id="circle2" ondblclick="text(circle2, b1, p2)" class="circle">
+                    </div>
+                </div>
+            </div>
+            <div id="b1h">
+                <h2 class="con">2019/05/01</h2>
+            </div>
+            <div id="b1">
+                <h3></h3>
+                <p id="p2"></p>
+            </div>
+        </div>
+
+        <div id="partc">
+            <div id="c1c" onmouseover="show(circle3)" onmouseout="hide(circle3)">
+                <div style="position: absolute; top:10px; left: 10px; width: 30px; height: 30px; background-color: #BFEFFF; border-radius: 10px; border: solid 5px white;">
+                    <div style="position: absolute; background-color: white; width: 15px; height: 15px; border-radius: 50%; top: 7.5px; left: 7.5px; display: none;" id="circle3" ondblclick="text(circle3, c1, p3)" class="circle">
+                    </div>
+                </div>
+            </div>
+            <div id="c1h">
+                <h2 class="con">2019/06/01</h2>
+            </div>
+            <div id="c1">
+                 <h3></h3>
+                <p id="p3"></p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    var key = "";
+
+    function show(obj) 
+    {
+        obj.style.display = "inline-block";
+    }
+
+    function hide(obj) 
+    {
+        obj.style.display = "none";
+    }
+
+    function text(obj1, obj2, obj3)
+    {
+        if (obj1.style.backgroundColor == "white")
+        {       
+            obj1.style.backgroundColor = "red";
+            obj2.style.height = "200px";
+            obj3.style.display = "inline-block";
+        }
+        else
+        {
+            obj1.style.backgroundColor = "white";
+            obj2.style.height = "50px";
+            obj3.style.display = "none";
+        }
+    }
+
+    function search()
+    {
+        var contents=document.getElementsByClassName('con');
+        for(var i = 0; i < contents.length; i ++)
+        {
+                var content=contents[i];
+                var str = content.innerHTML;
+                content.innerHTML = str.split('<span id="change">' + key +'</span>').join(key);
+        }
+
+        var contents=document.getElementsByClassName('con2');
+        for(var i = 0; i < contents.length; i ++)
+        {
+                var content=contents[i];
+                var str = content.innerHTML;
+                content.innerHTML = str.split('<span id="change">' + key +'</span>').join(key);
+        }
+        
+        key = document.getElementById("texta").value;
+
+        if (key == "")
+        {
+            alert("请输入关键词")
+        }
+        else
+        {            
+            var flag = 0;
+            var contents=document.getElementsByClassName('con');
+            for(var i = 0; i < contents.length; i ++)
+            {
+                var content=contents[i];
+                var str = content.innerHTML;
+                if (str.indexOf(key) != -1) 
+                {                 
+                    flag = 1;
+                    content.innerHTML = str.split(key).join('<span id="change">' + key +'</span>');
+                    var s = "#"+"change";
+                    window.location.href=s;
+                }
+            }
+
+            var contents=document.getElementsByClassName('con2');
+            for(var i = 0; i < contents.length; i ++)
+            {
+                var content=contents[i];
+                var str = content.innerHTML;
+                if (str.indexOf(key) != -1) 
+                {      
+
+                    //选中的隐藏框隐藏起来，且按钮颜色变成红色           
+                    flag = 1;
+                    content.parentNode.style.height = "200px";
+                    content.style.display = "inline-block";
+
+                    var k = parseInt(i / 3) + 1;
+                    var j = "circle" + k;
+                    var circle = document.getElementById(j);
+                    circle.style.backgroundColor="red";           
+
+                    content.innerHTML = str.split(key).join('<span id="change">' + key +'</span>');
+                    var s = "#"+"change";
+                    window.location.href=s;
+                }
+                else
+                {
+                    //未选中的隐藏框隐藏起来，且按钮颜色变回白色
+                    content.parentNode.style.height = "50px";
+                    content.style.display = "none";
+
+                    var k = parseInt(i / 3) + 1;
+                    var j = "circle" + k;
+                    var circle = document.getElementById(j);
+                    circle.style.backgroundColor="white";
+                }
+            }
+
+            if (flag == 0)
+            {
+                alert("无该关键词")
+            }
+        
+        }
+    }
+
+     document.onkeydown = function(e){
+        if(e.keyCode==13) {
+            search();
+        }
+    }
+
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
